@@ -1,0 +1,130 @@
+@import "./color";
+@import "./mixin";
+* {
+    font-family: "Noto Sans TC", sans-serif;
+}
+h2,
+h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 120%;
+    color: $title;
+    margin: 0;
+}
+h3 {
+    padding: 0 60px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    &::before,
+    &::after {
+        content: "";
+        width: 50px;
+        height: 100%;
+        background-image: url(../../image/title.svg);
+        @include bgSetting(contain, center);
+        position: absolute;
+    }
+    &::before {
+        left: 0;
+    }
+    &::after {
+        right: 0;
+        transform: rotate(180deg);
+    }
+}
+h4,
+p {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.25px;
+    margin: 10px 0;
+    color: $font;
+}
+h4 {
+    position: relative;
+    padding-left: 12px;
+    margin-top: 30px;
+    &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: $font;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+span {
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0.8px;
+    color: $dark;
+}
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: $font;
+    cursor: pointer;
+    &:hover,
+    &:link,
+    &:active,
+    &:visited {
+        text-decoration: none;
+    }
+}
+.primaryBtn {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 1.25px;
+    background-color: $primary;
+    border-radius: 8px;
+    color: $title;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    @include pad() {
+        padding: 20px 48px;
+    }
+    &::before {
+        content: " ";
+        display: block;
+        width: 350px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.4);
+        position: absolute;
+        top: -50px;
+        left: -80vw;
+        transform: rotate(-45deg);
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover,
+    &:active {
+        &::before {
+            left: 150%;
+        }
+    }
+}
+.tag {
+    display: inline-block;
+    width: fit-content;
+    color: $title;
+    border: solid 1px $font;
+    border-radius: 40px;
+    padding: 8px 20px;
+    @include mobile() {
+        padding: 8px;
+    }
+}
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    @include mobile() {
+        max-width: 100vw;
+        margin: 0 15px;
+    }
+}

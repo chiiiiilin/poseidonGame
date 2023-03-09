@@ -1,0 +1,28 @@
+@mixin bgSetting($contain, $position) {
+    background-repeat: no-repeat;
+    background-size: $contain;
+    background-position: $position;
+}
+@mixin center() {
+    position: relative;
+    top: 50%;
+    // margin: 0 auto;
+    transform: translateY(-50%);
+}
+
+//media
+@mixin pad() {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin mobile() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mini() {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
