@@ -93,10 +93,41 @@ header {
                     display: none;
                 }
             }
-            .serch {
+            .search {
                 width: 15%;
                 margin: 0 30px;
             }
+            .searching{
+                position: absolute;
+                bottom: -26px;
+                left: 70%;
+                opacity: 0;
+                transition: .5s;
+                input[type='text']{
+                    width: 150px;
+                    padding: 4px 15px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $font;
+                    color: $bg;
+                    outline: none;
+                    font-size: 14px;
+                }
+                input[type='submit']{
+                    padding: 4px 15px;
+                    border-radius: 5px;;
+                    color: $title;
+                    background-color: $primary;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            .searchinggg{
+                opacity: 1;
+            }
+            
+            
             .account {
                 width: 40%;
                 display: flex;
@@ -292,31 +323,71 @@ header {
     .slider {
         max-width: 1200px;
         margin: auto;
+        overflow-x: hidden;
         @include pad() {
             max-width: 100vw;
             margin: auto 5px;
         }
         .slider-wrapper {
-            width: 100%;
+            width: fit-content;
             height: 360px;
             display: flex;
             flex-wrap: nowrap;
-            overflow-x: hidden;
             margin: 45px 0;
-            @include mobile(){
+            position: relative;
+            left: calc(50% - 281.5px);
+
+            @include mobile() {
                 margin: 20px 0;
-                height: fit-content;
+                left: initial;
+                // height: fit-content;
             }
-            img {
+
+            .slider-item {
                 border-radius: 15px;
                 margin: 12px;
-                @include mobile(){
+                opacity: 0.6;
+                width: 563px;
+                height: 359px;
+                transition: opacity .5s .3s ease-in;
+                @include bgSetting(cover, center);
+                @include mobile() {
                     width: 95vw;
+                    height: auto;
                 }
-                @include mini(){
+                @include mini() {
                     width: 345px;
                     height: 220px;
                 }
+            }
+            .slider-item:first-child{
+                background-image: url(../image/cg1.jpg);
+            }
+            .slider-item:nth-child(2){
+                background-image: url(../image/cg2.jpg);
+            }
+            .slider-item:nth-child(3){
+                background-image: url(../image/cg3.jpg);
+            }
+            .slider-item:nth-child(4){
+                background-image: url(../image/cg4.jpg);
+            }
+            .slider-item:nth-child(5){
+                background-image: url(../image/cg5.jpg);
+            }
+            .slider-item:nth-child(6){
+                background-image: url(../image/cg6.jpg);
+            }
+            .slider-item:nth-child(7){
+                background-image: url(../image/cg7.jpg);
+            }
+            .slider-item:nth-child(8){
+                background-image: url(../image/cg8.jpg);
+            }
+
+            .slider-active {
+                opacity: 1;
+                left: 50%;
             }
         }
         .slider-nav {
@@ -326,12 +397,22 @@ header {
             display: flex;
             flex-wrap: nowrap;
             overflow-x: scroll;
+            cursor: pointer;
             @include pad() {
                 width: 100%;
             }
             .slider-nav-item {
+                width: 116px;
                 margin: 0 6px;
                 border-radius: 12px;
+                opacity: 0.6;
+                
+                &:hover{
+                    opacity: .9;
+                }
+            }
+            .slider-active {
+                opacity: 1;
             }
         }
     }
@@ -366,7 +447,7 @@ main {
             display: block;
             padding: 20px 0;
             position: relative;
-            transition: .5s;
+            transition: 0.5s;
             &::after {
                 content: "";
                 width: 80px;
@@ -376,9 +457,9 @@ main {
                 top: 50%;
                 right: 0;
             }
-            &:hover{
+            &:hover {
                 color: $title;
-                &::after{
+                &::after {
                     background-color: $title;
                 }
             }

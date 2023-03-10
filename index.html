@@ -30,9 +30,14 @@
                 </div>
                 <div class="nav-option">
                     <a href="#" class="lang">English</a>
-                    <a href="#" class="serch">
+                    <a href="#" class="search">
                         <img src="./image/vector.svg" alt="搜尋" />
                     </a>
+                    <label for="" class="searching">
+                        <input type="text" placeholder="想搜尋什麼呢～" />
+                        <input type="submit" value="搜尋" />
+                    </label>
+
                     <div class="account">
                         <a href="#" class="login">登入</a>
                         <a href="#" class="signup">註冊</a>
@@ -80,31 +85,71 @@
             </div>
             <div class="slider">
                 <div class="slider-wrapper">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
-                    <img src="./image/cg1.jpg" alt="cg圖">
+                    <div class="slider-item slider-active"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
                 </div>
                 <div class="slider-nav">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
-                    <img class="slider-nav-item" src="./image/cg1.jpg" alt="cg圖">
+                    <img
+                        class="slider-nav-item slider-active"
+                        src="./image/cg1.jpg"
+                        alt="cg圖"
+                        data-index="0"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg2.jpg"
+                        alt="cg圖"
+                        data-index="1"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg3.jpg"
+                        alt="cg圖"
+                        data-index="2"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg4.jpg"
+                        alt="cg圖"
+                        data-index="3"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg5.jpg"
+                        alt="cg圖"
+                        data-index="4"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg6.jpg"
+                        alt="cg圖"
+                        data-index="5"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg7.jpg"
+                        alt="cg圖"
+                        data-index="6"
+                    />
+                    <img
+                        class="slider-nav-item"
+                        src="./image/cg8.jpg"
+                        alt="cg圖"
+                        data-index="7"
+                    />
                 </div>
             </div>
         </div>
         <main>
             <div class="fixed">
-                <a href="#intro">遊戲簡介</a>
-                <a href="#environment">運作環境</a>
+                <a href="#intro" id="introDot">遊戲簡介</a>
+                <a href="#environment" id="envDot">運作環境</a>
                 <a href="#" class="primaryBtn">開始遊戲</a>
             </div>
             <section class="intro" id="intro">
