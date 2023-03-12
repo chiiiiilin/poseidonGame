@@ -16,7 +16,7 @@ bell.addEventListener('click', () => {
     if(bell.classList.contains('bell-ding')){
         localStorage.setItem('bellDing', 'bell-ding');
     }else{
-        alert('確定要關閉小鈴鐺通知？');
+        alert('嗚嗚 想收到消息的話要再想到我呦( ´•̥̥̥ω•̥̥̥` )');
         localStorage.removeItem('bellDing');
     }
 })
