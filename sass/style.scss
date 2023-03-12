@@ -55,6 +55,14 @@ header {
             width: 50%;
             margin: 0 10px;
         }
+        a {
+            display: inline-block;
+            height: fit-content;
+            @include center();
+            &:hover{
+                color: $secondary;
+            }
+        }
         .nav-list {
             display: flex;
             width: 50%;
@@ -64,11 +72,6 @@ header {
             }
             @include mobile() {
                 display: none;
-            }
-            a {
-                display: inline-block;
-                height: fit-content;
-                @include center();
             }
         }
         .nav-option {
@@ -82,9 +85,6 @@ header {
                 display: none;
             }
             a {
-                display: inline-block;
-                height: fit-content;
-                @include center();
                 margin: 0 10px;
             }
             .lang {
@@ -96,14 +96,25 @@ header {
             .search {
                 width: 15%;
                 margin: 0 30px;
+                svg{
+                    color: $font;
+                    fill: currentColor;
+                }
+                &:hover{
+                    svg{
+                        color: $secondary;
+                        transition: .5s;
+                        transform: scale(1.2);
+                    }
+                }
             }
-            .searching{
+            .searching {
                 position: absolute;
                 bottom: -26px;
                 left: 70%;
                 opacity: 0;
-                transition: .5s;
-                input[type='text']{
+                transition: 0.5s;
+                input[type="text"] {
                     width: 150px;
                     padding: 4px 15px;
                     border: none;
@@ -113,21 +124,20 @@ header {
                     outline: none;
                     font-size: 14px;
                 }
-                input[type='submit']{
+                input[type="submit"] {
                     padding: 4px 15px;
-                    border-radius: 5px;;
+                    border-radius: 5px;
                     color: $title;
-                    background-color: $primary;
+                    background-color: $secondary;
                     outline: none;
                     border: none;
                     cursor: pointer;
                 }
             }
-            .searchinggg{
+            .searchinggg {
                 opacity: 1;
             }
-            
-            
+
             .account {
                 width: 40%;
                 display: flex;
@@ -159,6 +169,12 @@ header {
                     top: 50%;
                     right: 0;
                 }
+                &:hover{
+                    img{
+                        transition: .5s;
+                        transform: scale(1.2);
+                    }
+                }
             }
         }
         .nav-mobile {
@@ -183,11 +199,19 @@ header {
                 height: 40px;
                 margin: 0 10px;
                 @include center();
-                img {
+                svg {
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    color: $font;
+                    fill: currentColor;
+                }
+            }
+            .bell-ding{
+                background-color: $title;
+                svg{
+                    fill: $bg;
                 }
             }
             @include mobile() {
@@ -349,7 +373,7 @@ header {
                 opacity: 0.6;
                 width: 563px;
                 height: 359px;
-                transition: opacity .5s .3s ease-in;
+                transition: opacity 0.5s 0.3s ease-in;
                 @include bgSetting(cover, center);
                 @include mobile() {
                     width: 95vw;
@@ -360,28 +384,28 @@ header {
                     height: 220px;
                 }
             }
-            .slider-item:first-child{
+            .slider-item:first-child {
                 background-image: url(../image/cg1.jpg);
             }
-            .slider-item:nth-child(2){
+            .slider-item:nth-child(2) {
                 background-image: url(../image/cg2.jpg);
             }
-            .slider-item:nth-child(3){
+            .slider-item:nth-child(3) {
                 background-image: url(../image/cg3.jpg);
             }
-            .slider-item:nth-child(4){
+            .slider-item:nth-child(4) {
                 background-image: url(../image/cg4.jpg);
             }
-            .slider-item:nth-child(5){
+            .slider-item:nth-child(5) {
                 background-image: url(../image/cg5.jpg);
             }
-            .slider-item:nth-child(6){
+            .slider-item:nth-child(6) {
                 background-image: url(../image/cg6.jpg);
             }
-            .slider-item:nth-child(7){
+            .slider-item:nth-child(7) {
                 background-image: url(../image/cg7.jpg);
             }
-            .slider-item:nth-child(8){
+            .slider-item:nth-child(8) {
                 background-image: url(../image/cg8.jpg);
             }
 
@@ -406,9 +430,9 @@ header {
                 margin: 0 6px;
                 border-radius: 12px;
                 opacity: 0.6;
-                
-                &:hover{
-                    opacity: .9;
+
+                &:hover {
+                    opacity: 0.9;
                 }
             }
             .slider-active {
@@ -503,7 +527,13 @@ main {
                     left: 150%;
                 }
             }
+            .shine{
+                color: $title;
+                font-size: 26px;
+                animation: shine 1.5s 4.6s linear infinite;
+            }
         }
+        
         .tags {
             text-align: center;
             @include mobile() {
@@ -526,6 +556,18 @@ main {
             text-align: center;
             a {
                 margin: 0 5px;
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                transition: .5s;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
     }
@@ -603,9 +645,14 @@ footer {
             border: solid 0.5px $font;
             border-radius: 2px;
             font-size: 12px;
+            transition: .5s;
             @include mobile() {
                 order: 1;
                 margin: 20px auto;
+            }
+            &:hover{
+                border: solid .5px $secondary;
+                background-color: $secondary;
             }
         }
         .icons {
@@ -613,6 +660,20 @@ footer {
             @include mobile() {
                 order: 2;
                 margin: 10px 0;
+            }
+            a{
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                transition: .5s;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
         a {
@@ -644,6 +705,9 @@ footer {
                     display: none !important;
                     opacity: 0 !important;
                 }
+                &:hover{
+                    color: $secondary;
+                }
             }
             &::after {
                 content: "";
@@ -666,5 +730,28 @@ footer {
                 text-align: center;
             }
         }
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+  }
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes shine {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        color: $title;
     }
 }

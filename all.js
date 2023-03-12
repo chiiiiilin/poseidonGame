@@ -1,9 +1,25 @@
-//search啦
+//search
 const search = document.querySelector(".search");
-let searching = document.querySelector('.searching');
+let searching = document.querySelector(".searching");
 search.addEventListener("click", () => {
     searching.classList.toggle("searchinggg");
 });
+
+//開啟小鈴鐺
+const bell = document.querySelector('.bell');
+const ding = localStorage.getItem('bellDing');
+if(ding){
+    bell.classList.add(ding);
+}
+bell.addEventListener('click', () => {
+    bell.classList.toggle('bell-ding');
+    if(bell.classList.contains('bell-ding')){
+        localStorage.setItem('bellDing', 'bell-ding');
+    }else{
+        alert('確定要關閉小鈴鐺通知？');
+        localStorage.removeItem('bellDing');
+    }
+})
 
 //僅供pc遊玩按鈕
 function isMobileDevice() {
@@ -104,3 +120,20 @@ window.addEventListener("scroll", () => {
         document.querySelector("#envDot").style.color = "#ffffff80";
     }
 });
+
+//fade-in
+const elements = document.querySelectorAll('.fade-in');
+function checkVisibility(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(checkVisibility, { threshold: 0.3 }); 
+                                            //觀察目標元素的30%的面積進入視窗就會視為可見
+  elements.forEach(element => {
+    observer.observe(element);
+  });   //IntersectionObserver API
